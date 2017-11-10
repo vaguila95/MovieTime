@@ -1,7 +1,7 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
-# películas CinMark
+# películas CineMark
 url = 'https://www.cinemark.cl/movies'
 client = uReq(url)
 html = client.read()
