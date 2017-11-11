@@ -1,38 +1,52 @@
-[{
-    "cinemark": {
-        "pelicula":{
-            "cine":{
-                "sala": {
-                    "día": [horario1, horario2, horario3]
-                }
-            }
-        }
-    },
-    "hoyts":{
-
-    },
-    "cineplanet":{
-
-    }
-}]
-
 // Emp
-[{
-    "empresa": {
+[
+    {
         "name": <nombre empresa>,
-        "peliculas":{
-            "name": <nombre pelicula>,
-            "cines":{
-                "name": <nombre cine>,
-                "salas": {
-                    "name": <nombre sala>,
-                    "dias": {
-                        "dia": <dia>,
-                        "horarios": [horario1, horario2, horario3]
+        "movies":[
+            {
+                "name": <nombre pelicula>,
+                "theaters":[
+                    {
+                        "name": <nombre cine>,
+                        "rooms": [
+                            {
+                                "name": <nombre sala>,
+                                "days": [
+                                    {
+                                        "day": <dia>,
+                                        "schedule": [horario1, horario2]
+                                    }
+                                ]
+                            }
+                        ]
                     }
-                }
-            }
-        }
+                ]
+            },
+        ]
     },
-}]
+    {
+        "name": <nombre empresa>,
+        "movies":[
+            {
+                "name": <nombre pelicula>,
+                "theaters":[
+                    {
+                        "name": <nombre cine>,
+                        "rooms": [
+                            {
+                                "name": <nombre sala>,
+                                "days": [
+                                    {
+                                        "day": <dia>,
+                                        "schedule": [horario1, horario2]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+        ]
+    }
+]
 
