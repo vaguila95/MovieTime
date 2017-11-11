@@ -1,0 +1,38 @@
+[{
+    "cinemark": {
+        "pelicula":{
+            "cine":{
+                "sala": {
+                    "día": [horario1, horario2, horario3]
+                }
+            }
+        }
+    },
+    "hoyts":{
+
+    },
+    "cineplanet":{
+
+    }
+}]
+
+// Emp
+[{
+    "empresa": {
+        "name": <nombre empresa>,
+        "peliculas":{
+            "name": <nombre pelicula>,
+            "cines":{
+                "name": <nombre cine>,
+                "salas": {
+                    "name": <nombre sala>,
+                    "dias": {
+                        "dia": <dia>,
+                        "horarios": [horario1, horario2, horario3]
+                    }
+                }
+            }
+        }
+    },
+}]
+
