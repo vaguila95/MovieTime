@@ -1,19 +1,11 @@
-from urllib.request import urlopen as uReq
-from bs4 import BeautifulSoup as soup
-
-
-def souping(url):
-    client = uReq(url)
-    html = client.read()
-    client.close()
-    return soup(html, "html.parser")
+import resources as r
 
 
 url = 'https://www.cinemark.cl/movies'
 cinemark = dict()
 cinemark['name'] = 'cinemark'
 cinemark['movies'] = list()
-mark_soup = souping(url)
+mark_soup = r.souping(url)
 peliculas = mark_soup.findAll('li', {'class': 'item movie-list-li box'})
 
 for pelicula_html in peliculas:
@@ -22,7 +14,7 @@ for pelicula_html in peliculas:
     pelicula['theaters'] = list()
 
     url_pelicula = pelicula_html.div.a['href']
-    pelicula_soup = souping(url_pelicula)
+    pelicula_soup = r.souping(url_pelicula)
     for option in pelicula_soup.findAll(
             'select', {'class': 'movie-showtimes-selector'}
     )[0].findAll('option')[1:]:
@@ -51,13 +43,5 @@ for pelicula_html in peliculas:
                     for h in d.findAll('span', {'class': 'showtime-hour'}):
                         dia['schedule'].append(h.text)
                     cine['rooms'][-1]['days'].append(dia)
-
         pelicula['theaters'].append(cine)
     cinemark['movies'].append(pelicula)
-
-
-# Cine Hoyts
-
-# CinePlanet
-
-
